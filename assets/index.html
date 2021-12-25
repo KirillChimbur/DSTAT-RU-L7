@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>DSTAT</title>
+      <meta charset='UTF-8'>
+      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+      <meta name='viewport' content='width=device-width'/>
+      <link rel='stylesheet' type='text/css' href='css/style.css'>
+     <link rel='stylesheet' type='text/css' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css'>
+   </head>
+   <body>
+<div class='hamburger-menu'>
+  <input id='menu-toggle' type='checkbox'/>
+  <label class='menu-btn' for='menu-toggle'>
+    <span></span>
+  </label>
+  <ul class='menu-box'>
+    <a class='menu-item fas fa-home' href=''> Главная</a>
+  </ul>
+      <center>
+         <div style='background: #06122f; width: 90%; margin: 20px 20px 20px 20px; border-radius: 15px' id='menu-l7'>
+            <h2 style="color: white">Live Layer 7 DSTAT</h2>
+            <h3><span id='attack-address'></span></h3>
+            <p><button type='button' class='green-btn' onclick='copyAddress()'>Скопировать URL-Адрес</button></p>
+            <div id='graph' style='border-radius: 15px'></div>
+            </div>
+         <div style='background: #06122f; width: 90%; weight: 90%; margin: 20px 20px 20px 20px; border-radius: 15px' id='stats'>
+            <h2 style="color: white">Статистика</h2> 
+            <p>Самое большое Количество запросов за секунду: <span id='max_requests'></span></p>
+            <p>Количество запросов за день: <span id='total_day_requests'></span></p>
+       </div>
+      </center>
+   </body>
+   <script language='JavaScript'>
+      document.getElementById('attack-address').innerHTML = window.location.href + 'attack/'
+      function copyAddress() {
+          var tempInput = document.createElement('input')
+          tempInput.style = 'position: absolute; left: -1000px; top: -1000px'
+          tempInput.value = document.getElementById('attack-address').innerHTML
+          document.body.appendChild(tempInput)
+          tempInput.select()
+          document.execCommand('copy')
+          document.body.removeChild(tempInput)
+      }
+          
+   </script>
+   <script src='/socket.io/socket.io.js'></script>
+   <script src='js/highcharts.js'></script>
+   <script src='js/requests.js'></script>
+</html>
