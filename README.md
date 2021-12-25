@@ -7,4 +7,4 @@
 Готово!
 
 Скриншот:
-![Image alt](https://github.com/KirillChimbur/DSTAT-RU-L7/screen.png)
+![Image alt](https://github.com/KirillChimbur/DSTAT-RU-L7/blob/main/screen.png)
